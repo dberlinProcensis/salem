@@ -1,0 +1,336 @@
+/* TABLE OF CONTENTS */
+/* 0 -- Global Concerns */
+/* 1 -- Select Screen */
+/* 2 -- Header Section */
+/* 3 -- Main Section */
+/* 3-A -- Player Number */
+/* 3-B -- Dead Numbers */
+/* 3-C -- Vision Selection */
+/* 3-D -- Vision Output */
+/* END TABLE OF CONTENTS */
+
+/* 0 -- GLOBAL CONCERNS */
+* {
+    /* border: 1px solid red; */
+    /* 1-A -- CUSTOM COLORS */
+    --avocado-green: #568203;
+    --charcoal: rgb(49, 49, 49);
+    --charcoal-2: #36454F;
+    --creepy-yellow: #efdb9a;
+    --grape: rgb(187, 125, 231);
+    --grape-2: rgb(223, 191, 245);
+    --lettuce-green: #CDE6A5;
+    --sick-yellow: rgb(228, 225, 92);
+    --ocean-blue: #006994;
+    --ocean-blue-2: #004d6b;
+    /* END 1-A -- CUSTOM COLORS */
+    --button-shadow: drop-shadow(5px 5px 3px rgba(75, 75, 75, 0.4));
+    --button-shadow-2: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.5));
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ocean-blue-2);
+}
+/* END 0 -- GLOBAL CONCERNS */
+
+/* 1 -- SELECT SCREEN */
+.program-select {
+    background-color: var(--grape);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 125px;
+    margin: 15px;
+    filter: var(--button-shadow);
+}
+
+.program-select:hover {
+    background-color: var(--grape-2);
+    cursor: pointer;
+    filter: var(--button-shadow-2);
+}
+.program-select h3 {
+    text-align: center;
+    font-size: 35px;
+}
+/* END 1 -- SELECT SCREEN */
+
+/* 2 -- HEADER SECTION */
+.header {
+    /* background-color: black; */
+    /* background-color: var(--charcoal-2); */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.header h1.title {
+    font-size: 6.5vw;
+    color: var(--creepy-yellow);
+    font-family: "Miltonian Tattoo", monospace;
+}
+
+.header h2.sub-title {
+    font-size: 3.75vw;
+    font-family: "Overlock", sans-serif;
+    color: var(--creepy-yellow);
+    text-transform: capitalize;
+}
+/* END 2 -- HEADER SECTION */
+
+/* 3 -- MAIN SECTION */
+.main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    background-color: var(--lettuce-green);
+    width: 475px;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 15px;;
+}
+
+/* 3-A -- PLAYER NUMBER */
+.player-num {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+select {
+    font-family: "Cantora One";
+    width: max-content;
+    font-size: 18px;
+    padding-left: 1vw;
+    margin-left: 10px;
+}
+/* END 3-A -- PLAYER NUMBER */
+
+/* 3-B -- DEAD NUMBERS */
+.dead-nums {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    margin-top: 18px;
+}
+
+h3 {
+    display: inline-flex;
+    font-family: "Cantora One";
+    font-size: 32px;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.dead-nums h3 {
+    justify-content: flex-start;
+}
+
+.player-num h3 {
+    width: unset;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.checks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+    height: auto;
+    min-height: 180px;
+    width: 425px;
+    margin-top: 1vw;
+}
+
+input {
+}
+
+label {
+    font-family: "Cantora One";
+    /* margin-right: 10px; */
+} 
+
+/* COPIED FROM W3 FOR CUSTOM CHECKBOXES */
+/* Customize the label (the container) */
+.container {
+    display: flex;
+    align-items: center;
+    width: 26px;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 35%;
+    top: 15%;
+    width: 25%;
+    height: 50%;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  }/* END COPIED FROM W3 FOR CUSTOM CHECKBOXES */
+
+
+
+/* END 3-B -- DEAD NUMBERS */
+
+/* 3-C -- VISION SELECTION */
+.vision-options,
+.plunder-container {
+    display: flex;
+    flex-flow: column;
+    margin: 1.5vw;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.vision-btn-container,
+.plunder-btn-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.vision-btn, 
+.plunder-btn {
+    background-color: var(--grape);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    height: 1.75vw;
+    margin: 10px 45px;
+    padding: 15px;
+    filter: var(--button-shadow);
+    transition: 150ms transform ease-in-out,
+                150ms filter ease-in-out;
+}
+
+.btn-text {
+    text-transform: uppercase;
+    font-family: "Cantora One";
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.vision-btn:hover, 
+.plunder-btn:hover {
+    /* background-color: white; */
+    background-color: var(--grape-2);
+    cursor: pointer;
+    filter: var(--button-shadow-2);
+}
+
+.vision-btn:active,
+.plunder-btn:active {
+    /* background-color: black; */
+    color: white;
+    filter: none;
+    transform: translate(2px, 2px)
+}
+/* END 3-C -- VISION SELECTION */
+
+/* 3-D -- VISION OUTPUT */
+.vision-output, 
+.plunder-directive {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;;
+}
+
+.reading, 
+.directive {
+    background-color: whitesmoke;
+    font-family: "overlock", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+    height: 3vw;
+    width: 90%;
+
+}
+
+/* END 3-D -- VISION OUTPUT */
+/* END 3 -- MAIN SECTION */

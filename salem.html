@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town of Salem Tools</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Eater&family=Miltonian+Tattoo&family=Overlock+SC&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="salem.css" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/jpg" href="./RoleIcon_Medium.png" />
+
+
+</head>
+<body>
+
+    <!-- CONTAINER -->
+    <div class="body-container">
+
+        <!-- LEFT HALF -->
+        <div class="left-half">
+
+            <!-- HEADER SECTION -->
+            <div class="header">
+                <h1 class="title">Town of Salem</h1>
+                <h2 class="sub-title">Role Playing Tools</h2>
+            </div>
+
+            <!-- MAIN SECTION -->
+            <div class="main">
+
+                <!-- PIRATE -->
+                <div class="program-select" onclick="program('pirate')">
+                    <h3>Pirate Plunder Generator</h3>
+                </div>
+                    
+                <!-- FAKE PSYCHIC -->
+                <div class="program-select" onclick="program('fakePsy')">
+                    <h3>Fake Psychic Will Generator</h3>
+                </div>
+
+            </div>
+
+            <div class="instructions">
+                <h2 class="sub-title" id="instructions-header">Instructions</h2>
+                <p class="normal" id="instructions">
+                    The above generators are HTML compatible gameplay tools for the online game: <em>Town of Salem</em>. 
+                    <br><br>
+                    Each generator opens in its own small window.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT HALF -->
+        <div class="right-half">
+            <h2 class="sub-title" id="screenshots-header">What Is This?</h2>
+            <p><em>Town of Salem</em> is a popular online social-deduction style game, similar to such party games as "Mafia" or "Serial Killer" or "Werewolf." It is a game of guile and subterfuge in order to take control of a town. Evil roles need to hide their true identity, often requiring them to fake a legit role in the town.
+            <br><br>
+            One often-faked town role is the Psychic, which receives a vision that contains at least one guaranteed evil player, or one guaranteed good player. Instead of making these numbers up myself in order to fake claim, I considered the constraints and requirements and decided to make a glorified random number generator to fake the role of Psychic.
+            </p>
+            <p>
+            I first made this program with <code>Node</code>, which allows quick entering of numbers by the user with the keypad. Screenshots of its use are below. I then adapted it to <code>HTML</code>, which can be accessed on the left side of the screen.
+            <br><br>
+            I also made a tool for playing as the Pirate, which requires you to choose a player to plunder, and essentially play <em>rock, paper, scissors</em> to see who wins. Again it relies on custom random number generators and customized content.</p>
+            <h3>SCREENSHOTS</h3>
+            <p>The player number is excluded from visions, as well as any "dead" numbers entered by the user. The vision types are specified, or <code>ENTER</code> simply redraws new numbers.</p>
+            <img src="Salem-Screenshots-no-shadow-psy.jpg" />
+            <p>Building on the same number validation system, with an added directive-generator, the pirate program tells you who to plunder and whether to use the scimitar, rapier, or pistol against them.</p>
+            <img src="Salem-Screenshots-no-shadow-pirate.jpg" />
+            <!-- <img src="salem-screenshots.png" /> -->
+        </div>
+    
+    </div>
+
+    <!-- JQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+        const program = (role) => {
+            if (role === 'pirate') {
+                window.open('pirate.html', '_blank', 'location=no,height=675,width=520,scrollbars=yes,status=yes');
+
+            } else if (role === 'fakePsy') {
+                window.open('psy.html', '_blank', 'location=no,height=675,width=520,scrollbars=yes,status=yes');
+            }
+        }
+    </script>
+
+</body>
+</html>

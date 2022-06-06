@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town of Salem Tools</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Eater&family=Miltonian+Tattoo&family=Overlock+SC&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/jpg" href="./RoleIcon_Medium.png" />
+
+
+</head>
+<body>
+
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <h1 class="title">Town of Salem</h1>
+        <h2 class="sub-title">Role Playing Tools</h2>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="main">
+
+        <!-- PIRATE -->
+        <div class="program-select" onclick="program('pirate')">
+            <h3>Pirate Plunder Generator</h3>
+        </div>
+               
+        <!-- FAKE PSYCHIC -->
+        <div class="program-select" onclick="program('fakePsy')">
+            <h3>Fake Psychic Will Generator</h3>
+        </div>
+
+    </div>
+
+    <!-- JQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script>
+        const program = (role) => {
+            if (role === 'pirate') {
+                window.open('pirate.html', '_blank', 'location=no,height=675,width=520,scrollbars=yes,status=yes');
+
+            } else if (role === 'fakePsy') {
+                window.open('psy.html', '_blank', 'location=no,height=675,width=520,scrollbars=yes,status=yes');
+            }
+        }
+    </script>
+
+</body>
+</html>

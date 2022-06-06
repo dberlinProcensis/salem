@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate Plunder Planner</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Eater&family=Miltonian+Tattoo&family=Overlock+SC&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Raleway:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/jpg" href="./RoleIcon_Pirate.png" />
+
+
+</head>
+<body>
+
+    <!-- HEADER SECTION -->
+    <div class="header">
+        <h1 class="title">Town of Salem</h1>
+        <h2 class="sub-title">pirate plunder planner</h2>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="main">
+
+        <!-- PLAYER NUMBER SELECT -->
+        <div class="player-num"> 
+            <h3><label for="player-number">Select your player number:</label></h3>
+                <select name="Player Number" id="player-num-select" onchange="playerNum(value)">
+                    <option value="0">--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option> 
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+        </div>
+        
+        <!-- DEAD NUMBERS SELECT -->
+        <div class="dead-nums">
+            <h3><label for="player-number">Select numbers to exclude:</label></h3>
+            
+            <!--  CHECKBOXES  -->
+            <div class="checkbox-container">
+                <div class="checks" id="checks1-5">
+                    
+                    <label class="container">1
+                        <input type="checkbox" id="1" onclick="checkOff(1)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">2
+                        <input type="checkbox" id="2" onclick="checkOff(2)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">3
+                        <input type="checkbox" id="3" onclick="checkOff(3)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">4
+                        <input type="checkbox" id="4" onclick="checkOff(4)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">5
+                        <input type="checkbox" id="5" onclick="checkOff(5)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">6
+                        <input type="checkbox" id="6" onclick="checkOff(6)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">7
+                        <input type="checkbox" id="7" onclick="checkOff(7)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">8
+                        <input type="checkbox" id="8" onclick="checkOff(8)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">9
+                        <input type="checkbox" id="9" onclick="checkOff(9)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">10
+                        <input type="checkbox" id="10" onclick="checkOff(10)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">11
+                        <input type="checkbox" id="11" onclick="checkOff(11)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">12
+                        <input type="checkbox" id="12" onclick="checkOff(12)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">13
+                        <input type="checkbox" id="13" onclick="checkOff(13)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">14
+                        <input type="checkbox" id="14" onclick="checkOff(14)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">15
+                        <input type="checkbox" id="15" onclick="checkOff(15)">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </div>
+            </div>            
+
+        </div>
+        
+        <!-- PLUNDER DIRECTIVE BUTTON -->
+        <div class="plunder-container">
+            <h3>Recieve your plunder directive:</h3>
+            <div class="plunder-btn-container">
+                <div class="plunder-btn" id="plunder-btn" onclick="plunder()"><span class="btn-text">Plunder!</span></div>
+            </div>
+            <!-- OUTPUT -->
+            <div class="plunder-directive">
+                <h3>Your Directive:</h3>
+                <div class="directive" id="directive"></div> 
+            </div>
+            <!-- find how to have it added to clipboard -->
+        </div>
+        
+        
+    </div>
+
+    <!-- JQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
