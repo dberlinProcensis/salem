@@ -65,7 +65,8 @@ const checkOff = (num) => {
 /* 5 -- VISION FUNCTION */
 const vision = (type) => {
     let visionOutput = [];
-    $('.reading').empty();  // Clear any previous vision
+    let reading = document.getElementsByClassName('reading');
+    reading.innerHTML = '';  // Clear any previous vision
 
     const randos = (amount) => { // AMOUNT = 2 for good || 3 for evil
         let i = visionOutput.length; 
@@ -89,12 +90,12 @@ const vision = (type) => {
         console.log('You selected an EVIL vision...')
         randos(3);
         visionStr = visionOutput.join(', ');
-        $('.reading').append(`EVIL => { ${visionStr} }`);
+        reading.append(`EVIL => { ${visionStr} }`);
     } else if (type === 'good') {
         console.log('You selected a GOOD vision...')
         randos(2);
         visionStr = visionOutput.join(', ');
-        $('.reading').append(`good => { ${visionStr} }`);
+        reading.append(`good => { ${visionStr} }`);
     }
         
 };
@@ -103,6 +104,7 @@ const vision = (type) => {
 /* 6 -- PLUNDER FUNCTION */
 const plunder = () => {
     let target;
+    let directive = document.getElementById('directive');
 
     const directive = () => {
         let actions = ['slash em wit yerr scimitar!', 'stab em wit yerr rapier!', 'shoot em wit yerr pistol!'];
@@ -123,9 +125,9 @@ const plunder = () => {
     };
 
     // CALLS
-    $('#directive').empty();  // Clear any previous directive
+    directive.innerHTML = '';  // Clear any previous directive
     rando();
-    $('#directive').append(`\nYarr... plunder ${target}, and ${directive()}\n`);
+    directive.append(`\nYarr... plunder ${target}, and ${directive()}\n`);
 }
 
 /* END 6 -- PLUNDER FUNCTION */
